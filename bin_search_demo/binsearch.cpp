@@ -13,7 +13,7 @@ int bin_search(int head, int tail) {
     if (head > tail)
         return -1;
 
-    int mid = (head + tail) / 2;
+    int mid = (head + tail) / 2 + (head + tail) % 2;
 
     /* Quick find */
     // if (a[mid] == key) return mid;
@@ -23,10 +23,10 @@ int bin_search(int head, int tail) {
     if (head == tail) return head;
 
 
-    if (a[mid] >= key)
-        return bin_search(head, mid);
-    else if (a[mid] < key)
-        return bin_search(mid + 1, tail);
+    if (a[mid] > key)
+        return bin_search(head, mid - 1);
+    else if (a[mid] <= key)
+        return bin_search(mid, tail);
 
 }
 
