@@ -20,7 +20,7 @@ int bin_search(int head, int tail) {
     
 
     /* Another terminate condition */
-    if (head == tail) return head;
+    if (head == tail && a[mid] == key) return head;
 
 
     if (a[mid] > key)
